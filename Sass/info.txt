@@ -1,0 +1,18 @@
+-link do curso
+https://www.udemy.com/course/sass-placeholders-o-jeito-certo/
+
+- Referencia flexbox
+https://desenvolvimentoparaweb.com/css/flexbox/
+
+-Botão scss
+https://codepen.io/tarciozemel/pen/gXjMYR
+
+-Menu scss
+https://codepen.io/tawrciozemel/pen/yPqJNG
+
+-width scss
+https://codepen.io/tarciozemel/pen/rYrLvV
+
+Extra:
+api de dados aletario de usuarios
+https://randomuser.me/
