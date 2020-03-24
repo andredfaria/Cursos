@@ -1,0 +1,146 @@
+sudo  apt-get update 
+
+
+sudo apt-get -y install apache2 
+
+
+
+verificando status do apache2
+
+	service apache2 start 
+
+
+Startando apache2
+
+	service apache2 start 
+
+Parando apache 2
+
+	service apache2 stop
+
+
+restartando apache2 
+
+	service apache2 restart
+
+
+acessando pelo navegador
+
+
+	http://localhost 
+		ou
+	http://127.0.0.1 
+
+
+Instalando MariaDB
+
+	sudo apt-get -y install mariadb-server 
+
+
+Startando mariadb
+	service mariadb start 
+
+restartando mariadb
+	service mariadb restart 
+
+
+Parando mariadb
+	service mariadb stop
+
+
+Vendo o status do mariadb
+	service mariadb status
+
+
+Habilitando a senha do root no mariadb
+
+	mysql_secure_installation
+
+
+
+Redefinindo a senha do mariadb
+
+	 mysql -u root -p 
+
+
+nova senha e confirma
+
+
+Instalando o PHP 7
+
+apt-get -y install php php-fpm php-pdo php-gd php-mysqlnd php-mbstring php-common php-gettext php-curl php-cli 
+
+
+Acesse:
+ 
+cd /var/www/html e crie o arquivo index.php com o conteúdo abaixo:
+
+
+nano index.php
+
+
+
+	<?php
+		echo phpinfo();
+	?>
+
+
+acesse  http://localhost/index.php
+
+
+
+Instalando o phpmyadmin
+
+	sudo apt-get -y intall phpmyadmin 
+
+	Marca a opçõa apache2
+
+	sim
+
+	define uma senha e confirma
+
+
+Restarta o apache2
+
+	service apache2 restart 
+
+
+Acessa o http://localhost/phpmyadmin 
+
+
+
+usuário: phpmyadmin
+senha: a que você definiu
+
+
+
+
+Alterando privilégios do usuário phpmyadmin no phpmyadmin
+
+Acessa:
+
+	mysql -u root -p
+
+	GRANT ALL PRIVILEGES ON * . * TO 'phpmyadmin'@'localhost';
+	
+	exit para sair
+
+
+	service mariadb restart 
+
+Sai do phpmyadmin (faz logof caso esteja logado!
+
+	Acessa novamente.
+
+
+	http://localhost/phpmyadmin 
+
+	usuário: phpmyadmin
+	senha: a que você definiu
+
+
+Caso queira criar um novo usuário, execute o comando:
+
+CREATE USER 'seuUsuario'@'localhost' IDENTIFIED BY 'suaSenha';
+
+
