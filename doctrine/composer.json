@@ -1,0 +1,13 @@
+{
+    "name": "curso/doctrine",
+    "type": "project",
+    "require": {
+        "doctrine/orm": "^2.6.2"
+    },
+    "authors": [
+        {
+            "name": "André de Faria",
+            "email": "andredefaria_@hotmail.com"
+        }
+    ]
+}

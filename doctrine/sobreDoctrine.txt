@@ -1,0 +1,57 @@
+O doctrine é um conjunto de projetos voltados principalmente para acesso a banco de dados na linguagem PHP, o objeto de estudo central desse curso é um desses projetos, o Doctrine ORM.
+
+ORM (Object-Relational Mapping) ou, em português, mapeamento objeto-relacional, é uma técnica para aproximar o paradigma de desenvolvimento de aplicações orientadas a objetos ao paradigma do banco de dados relacional. O uso da técnica de mapeamento objeto-relacional é realizado através de um mapeador objeto-relacional que geralmente é a biblioteca ou framework que ajuda no mapeamento e uso do banco de dados.
+
+Conhecendo os conceitos acima, podemos dizer que o Doctrine ORM é um mapeador objeto-relacional escrito na linguagem PHP. Seu principal objetivo é facilitar o processo de desenvolvimento de aplicações orientadas a objeto que utilizam o banco de dados relacionais para persistirem suas informações.
+
+O Doctrine é um projeto extremamente maduro, seu desenvolvimento teve início no ano de 2006 e nesse tempo vem crescendo e evoluindo cada dia mais.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+O objetivo do doctrine inicialmente era construir um projeto único para garantir o acesso a dados de forma eficiente, assim como em outras linguagens de programação também no PHP. Com o tempo, o projeto foi sendo melhorado e nesses processos os desenvolvedores começaram a observar que poderia separar o projeto em pequenos projetos que pudessem ser reutilizados, tanto dentro do próprio Doctrine quanto em outros projetos PHP, mesmo que a aplicação não utilize o Doctrine ORM em si..
+
+Baseado nessa filosofia, hoje o doctrine conta com mais de 15 projetos. Os principais para nosso curso são:
+
+DBAL
+É uma camada de abstração de acesso a dados construída sobre o PDO. Conta com recursos importantes que permitem executar queries parametrizadas, construir consultas através do query builder, além de ferramentas para ler e alterar a estrutura do banco de dados.
+
+ORM
+O Doctrine ORM, ponto principal do nosso curso, é um ORM (Object Relational Mapper) que implementa o padrão Data Mapper. Seu principal objetivo é facilitar o mapeamento entre o banco de dados relacional e o modelo orientado a objetos, diminuindo a complexidade do acesso aos dados.
+
+Commom
+Agrupa recursos em comum que são compartilhados por diferentes projetos do Doctrine. O objetivo principal dele é evitar que trechos de códigos com recursos comuns tenham de ser duplicados dentro dos diversos projetos do Doctrine.
+
+Migrations
+Permite a definição da estrutura do banco de dados através de arquivos dentro da aplicação, facilitando a criação do banco de dados em novos ambientes e também o versionamento da estrutura do banco.
+
+Annotations
+No PHP é comum usamos um padrão chamado DocBlock para documentarmos nossas aplicações. As annotations nada mais são do que informações que definimos dentro desses blocos de comentários, mas que são lidas pela aplicação ao invés de ignoradas como os demais comentários. O projeto annotation consistem em um parser (leitor) que consegue obter essas informações de forma simples.
+
+Collections
+Projeto consiste em uma biblioteca que adiciona funcionalidades bastante úteis para o tratamento de conjuntos de informações. Podemos pensar nas collections como sendo novas funcionalidades sobre os arrays nativos do PHP.
+
+Cache
+Projeto muito utilizado na comunidade PHP para realização de cache. Por padrão, possui drivers que permitem utilizá-lo com diferentes meios de armazenamento, como, redis, memcache e outros.
+
+
+---------------------------------------------------------------------------------
+
+Um ponto comum são as dúvidas entre os 3 itens: PDO, Doctrine DBAL e Doctrine ORM. Esses três recursos possuem o mesmo objetivo, acessar bancos de dados relacionais, porém, cada um tem uma função diferente.
+
+O PDO (PHP Data Object) é uma extensão da linguagem PHP para acesso a banco de dados. Ele possui uma interface que pode ser implementada de modo distinto para permitir a conexão com diferentes SGBDs (sistemas gerenciadores de banco dados). Essas implementações são agrupadas dentro de extensões adicionais que definem como o PDO deve trabalhar com cada sistema de banco de dados.
+
+Uma vantagem do PDO em relação a outras extensões de banco de dados para PHP é a possibilidade de, através da mesma classe e métodos, executar queries em diferentes SGBDs. Isso facilita a migração entre bancos de dados. Porém, mesmo com esse recurso, o PDO ainda encontra um grande problema quando falamos em diferentes SGBDs, as classes e os métodos são os mesmos, porém as queries SQL que executamos em um SGBD são diferentes.
+
+O DBAL (Database aBstraction & Access Layer) é uma camada de abstração construída sobre o PDO. Ela tem como objetivo tornar essa camada de acesso a dados mais robusta, adicionando uma série de funcionalidade, além de criar uma camada de abstração compatível com os diferentes SGBDs. Conforme veremos no andamento do curso, o DBAL pode ser usado independente do Doctrine ORM para facilitar o acesso a dados.
+
+Agora você deve estar se perguntando o que o Doctrine ORM tem a ver com PDO e DBAL?
+
+A resposta é tudo!
+
+Quando trabalhamos com ORM, dificilmente executamos queries SQL diretamente no SGBD. Isso significa que o ORM precisa saber exatamente como executar uma determinada ação independente do sistema de banco de dados que estamos executando, para isso, o Doctrine ORM utiliza o DBAL, permitindo a criação e execução de queries em diferentes SGBDs. Além disso, ele utiliza de recursos avançados do DBAL como a parte de obtenção de informações da estrutura do banco de dados e alteração da estrutura.
+
+O Doctrine ORM também tira grande proveito sobre o PDO, uma vez que a maioria dos sistemas gerenciadores de banco de dados comerciais já possuem extensões estáveis para PDO. Isso garante, por padrão, a compatibilidade com diversos SGBDs.
+
+
+
