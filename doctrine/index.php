@@ -6,8 +6,22 @@ require_once('vendor/autoload.php');
 require('conexao.php');
 
 #FORMAS DE FAZER CONSULTA
-// Query paradrão //
+#-Query paradrão
 // require('queryPadrao.php');
 
-//query parametrizada
-require('queryParametrizada.php');
+#-Query parametrizada
+// require('queryParametrizada.php');
+
+
+#-Query Bulider
+// require('queryBuilder.php');
+
+$queryBuilder = $comn->createQueryBuilder();
+$result = $queryBuilder->select('nome')
+                       ->from('userDoctrine')
+                       ->execute();
+
+
+while($row = $result->fetch()){
+    echo $row['nome'] . '<br>';
+}

@@ -16,7 +16,6 @@ while($row = $result->fetch()){
     echo $row['nome'] . '<br>';
 }
 
-
 #OUTRA FORMA DE USAR
 $user = $comn->fetchAll('select * from jogos_brasileirao limit 50');
 echo '<pre>';
