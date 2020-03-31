@@ -7,6 +7,8 @@
 * http://localhost:3333/?id=1 or 1=1 
 */
 
+echo '<br><br> Query paradrão <br>';
+
 $filter = '';
 
 if(isset($_GET['id'])){

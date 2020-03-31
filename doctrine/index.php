@@ -12,16 +12,10 @@ require('conexao.php');
 #-Query parametrizada
 // require('queryParametrizada.php');
 
-
 #-Query Bulider
 // require('queryBuilder.php');
 
-$queryBuilder = $comn->createQueryBuilder();
-$result = $queryBuilder->select('nome')
-                       ->from('userDoctrine')
-                       ->execute();
 
+#ESTRUTURA DO BANCO DE DADOS
+require('schemaManager.php');
 
-while($row = $result->fetch()){
-    echo $row['nome'] . '<br>';
-}

@@ -1,4 +1,7 @@
 <?php
+
+echo '<br><br> Query parametrizada <br>';
+
 $id = $_GET['id'];
 
 if(isset($_GET['id'])){
