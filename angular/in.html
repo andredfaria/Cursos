@@ -1,0 +1,132 @@
+<html ng-app="helloWord">
+<meta charset="utf-8">
+<html>
+<head>
+	<title>Hello</title>
+	<link rel="stylesheet" type="text/css" href="bootstreap/css/bootstrap.css">
+	<style type="text/css">
+		.jumbotron{
+			width: 400px;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+		.table{
+			margin-top: 10px;
+		}
+		.form-control{
+			margin: 5px;
+		}
+		.selecionado{
+			background-color: gray;
+		}
+	</style>
+	<script src="angular/angular.js"></script>
+	<script>
+		angular.module("helloWord",[]);
+		angular.module("helloWord").controller("helloWordCtrl", function ($scope) {
+			$scope.app = "hellor word";
+			
+			$scope.contatos = [
+			{nome:"andre", telefone:"999329999", cor: "blue"},
+			{nome:"luis", telefone:"2392", cor: "red"},
+			{nome:"jorge", telefone:"21313", cor:"green"}
+			];
+
+			$scope.operadoras = [
+			{nome: "Oi", codigo: 88, categoria: "celular"},
+			{nome: "TIM", codigo: 91, categoria: "celular"},
+			{nome: "CLARO", codigo: 89, categoria: "celular"},
+			{nome: "Vivo", codigo: 99, categoria: "celular"},
+			{nome: "GVT", codigo: 25, categoria: "fixo"},
+			{nome: "Emratel", codigo: 21, categoria: "fixo"}
+			];
+
+			//outra forma de fazer chamando a funçao e resolvendo aqui dentro 
+			//$scope.adicionar = function(nome, telefone){
+			// 	$scope.contatos.push({nome: $scope.nome, telefone: $scope.telefone});
+			// };
+
+			$scope.adicionar = function(contato){
+				$scope.contatos.push(angular.copy(contato));
+				delete $scope.contato;
+			};
+
+			$scope.as = "selecionado";
+			
+			$scope.apagar = function(contatos){
+				$scope.contatos = 
+				contatos.filter(function(a){
+					if(!a.selecionado)
+						return a;
+				});
+				
+			};
+
+			
+		});
+	</script>
+</head>
+<body ng-controller="helloWordCtrl">
+	<div class="jumbotron">
+		<div>
+			<h2 ng-bind="app"></h2>
+			<table class="table" ng-show="contatos.length > 0">
+				<tr>
+					<th></th>
+					<th>Nome</th>
+					<th>telefone</th>
+					<th>operadora</th>
+					<!-- <th></th> -->
+				</tr>
+				<tr ng-class="{selecionado: contato.selecionado}" ng-repeat="contato in contatos">
+					<td><input type="checkbox" name="" ng-model="contato.selecionado"></td>
+					<td>{{contato.nome}}</td>
+					<td>{{contato.telefone}}</td> 
+					<td>{{contato.operadoras.nome}}</td> 
+					<!-- <td>
+						<div style="width: 20px; height: 20px;" 
+						ng-style="{background-color': contatos.cor}">
+						{{contatos.cor}}
+					</div>
+				</td> -->
+			</tr>
+		</table>
+	</div>
+	<hr>
+	<div>
+	<form name="contatoForm">
+			<input class="form-control" type="text" ng-model="contato.nome" ng-riquired="true"/>
+			<input class="form-control" type="text" ng-model="contato.telefone"/>
+			<select class="form-control" 
+			ng-model="contato.operadoras" 
+			ng-options="operadora.nome group by operadora.categoria for operadora in operadoras">
+			<option value="">selecione uma operadora</option>
+		</select>
+	</form>
+
+	<div ng-show="contatoForm.$invalid" class="alert alert-danger">
+		Por Favor digite o nome e o telefone
+	</div>
+	<hr>
+	<button class="btn btn-primary btn-block" 
+	ng-disabled="!contato.nome || !contato.telefone" 
+	ng-click="adicionar(contato)">
+	Adicionar Contato
+</button>
+<button class="btn btn-danger btn-block" 
+ng-click="apagar(contatos)"
+ng-disabled="isContatoSelecioando(contato)">
+Apagar Contato
+</button>
+
+<hr>
+{{contato}}
+<hr>
+<div ng-include="'a.html'"></div>
+</div>
+
+</div>
+
+</body>
+</html>
