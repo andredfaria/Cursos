@@ -54,4 +54,50 @@ Quando trabalhamos com ORM, dificilmente executamos queries SQL diretamente no S
 O Doctrine ORM também tira grande proveito sobre o PDO, uma vez que a maioria dos sistemas gerenciadores de banco de dados comerciais já possuem extensões estáveis para PDO. Isso garante, por padrão, a compatibilidade com diversos SGBDs.
 
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+As entidades são usadas para realizar o mapeamento entre o modelo orientado a objetos e o modelo relacional. Por meio delas conseguimos representar exatamente a estrutura do nosso banco de dados.
+
+É possível definir nome de tabelas, colunas, chave primária e relacionamentos.
+
+Na imagem abaixo retirada da documentação do Symfony, podemos ver a representação entre o modelo orientado a objetos à esquerda e o modelo relacional à direita:
+
+
+
+Nas entidades definimos propriedades que são usadas para armazenar as informações guardadas em colunas no modelo relacional. Em cada instância da entidade guardamos uma linha da tabela do banco de dados.
+
+As instâncias de entidade enviadas para o Doctrine são usadas para realizar as modificações no banco de dados relacional.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Quando vamos mapear as colunas das nossas tabelas para propriedades das nossas entidades podemos configurar as seguintes informações dentro da chamada column:
+
+type: (opcional, padrão 'string') tipo de dado definido na coluna;
+name: (opcional, padrão nome do campo) nome da coluna no banco de dados;
+length: (opcional, padrão 255) tamanho da coluna no banco de dados (aplicado somente tipos que possuem tamanho);
+unique: (opcional, padrão FALSE) coluna com restrição de unicidade;
+nullable: (opcional, padrão FALSE) colunas que permitem valores nulos;
+precision: (opcional, padrão 0) precisão para valores decimais;
+scale: (opcional, padrão 0) quantidade de dígitos da parte inteira de um número decimal (não pode ser maior que a precisão);
+columnDefinition: (opcional) permite especificar a definição da coluna;
+options: (opcional) opções no formato chave-valor para passadas para o banco de dados.
+Dentro da declaração type podemos definir o tipo dentro das seguintes opções:
+
+string: tipo mapeado para VARCHAR e no PHP string;
+integer: tipo mapeado para INT e no PHP integer;
+smallint: tipo mapeado para SMALLINT e no PHP integer;
+bigint: tipo mapeado para BIGINT e no PHP string;
+boolean: tipo mapeado para boolean ou equivalente (TINYINT) e no PHP boolean;
+decimal: tipo mapeado para DECIMAL e no PHP string;
+date: tipo mapeado para DATETIME e no PHP DateTime object;
+time: tipo mapeado para TIME e no PHP DateTime object;
+datetime: tipo mapeado para DATETIME/TIMESTAMP e no PHP DateTime object;
+datetimetz: tipo mapeado para DATETIME/TIMESTAMP e no PHP DateTime object com timezone;
+text: tipo mapeado para CLOB e no PHP string;
+object: tipo mapeado para CLOB e no PHP objeto usando serialize() e unserialize();
+array: tipo mapeado para CLOB e no PHP array usando serialize() e unserialize();
+simple_array: tipo mapeado para CLOB e no PHP array usando implode() e explode() (só usar esse tipo se tiver certeza que os itens estarão separados por vírgula);
+json_array: tipo mapeado para CLOB e no PHP array usando json_encode() e json_decode();
+float: tipo mapeado para Float (Double Precision) e no PHP double;
+guid: tipo mapeado para GUID/UUID e no PHP string;
+blob: tipo mapeado para BLOB e no PHP resource stream.
+
 
