@@ -1,0 +1,62 @@
+{
+  "id": "1a4cd333-4e1c-4747-9521-80b20dcc959c",
+  "version": "2.0",
+  "name": "insatagram",
+  "url": "https://www.instagram.com",
+  "tests": [{
+    "id": "d84bfce7-a302-4f13-bc8f-c441ec8a7fe6",
+    "name": "Untitled",
+    "commands": [{
+      "id": "a0349ef3-2e4b-49de-a93d-227f23b147ff",
+      "comment": "",
+      "command": "open",
+      "target": "/anitta/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55587dc9-8b63-47e2-8e17-7b88fa85aef8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "682x702",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4181c671-0b5e-4641-b55a-f07e9d08b343",
+      "comment": "",
+      "command": "click",
+      "target": "css=.LH36I:nth-child(2) .g47SY",
+      "targets": [
+        ["css=.LH36I:nth-child(2) .g47SY", "css:finder"],
+        ["xpath=//div[@id='react-root']/section/main/div/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'46.3m')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bddfbfaa-7388-48f8-bd15-ca904380528e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=emenezesrs",
+      "targets": [
+        ["linkText=emenezesrs", "linkText"],
+        ["css=#f252e928c5a3c5 .FPmhX", "css:finder"],
+        ["xpath=//a[contains(text(),'emenezesrs')]", "xpath:link"],
+        ["xpath=//div[@id='f252e928c5a3c5']/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/emenezesrs/')]", "xpath:href"],
+        ["xpath=//div/div[2]/div/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'emenezesrs')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "a283695e-b2e6-4e51-a54b-c2e0cb823e5e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d84bfce7-a302-4f13-bc8f-c441ec8a7fe6"]
+  }],
+  "urls": ["https://www.instagram.com/"],
+  "plugins": []
+}

@@ -101,3 +101,8 @@ guid: tipo mapeado para GUID/UUID e no PHP string;
 blob: tipo mapeado para BLOB e no PHP resource stream.
 
 
+------------------------------------------------------------------------------------------------------------------------------------------
+Entity Manager
+O Entity Manager ou, em português, gerenciador de entidades, é a classe do doctrine responsável por gerenciar o estado das entidades e realizar as escritas no banco de dados. Ela implementa um padrão chamado Unit of Work ou, em português, unidade de trabalho, esse padrão mantém uma lista das alterações realizadas nas entidades monitoradas pelo entity manager e organiza a parte de escrita dessas alterações no banco de dados de forma consistente.
+
+Devido ao padrão unidade de trabalho, podemos guardar uma série de alterações em diferentes instâncias de entidade em memória e executar todas essas alterações para o banco de dados de uma única vez. É importante salientar que essa característica pode ser considerada uma vantagem, pois diminui a quantidade de vezes que o ORM precisa ir até o banco de dados, porém, ela precisa ser tratada com cautela, devido a quantidade de dados armazenados em memória e problemas de fluxo, é sempre importante o desenvolvedor entender que os dados estão em memória e precisam ser enviados para o banco de dados (isso ficará mais claro quando aprendermos o entity manager na prática).
