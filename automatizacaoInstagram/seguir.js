@@ -41,3 +41,20 @@ array.forEach((v, i) => {
 	});
 
 });
+
+
+let botao;
+let contador = 0;
+let array = document.querySelectorAll('.L3NKy');
+for (var i = 0; i < array.length; ++i) {
+    if(array[i].innerHTML == "Seguir"){
+	   var inicio = new Date().getTime();
+       var fim = inicio;
+       while(fim < inicio + 15000) {
+             fim = new Date().getTime();
+      }
+	   array[i].click();
+	   contador++;
+	   console.log("segui " + contador + " pessoa");
+    }
+}
