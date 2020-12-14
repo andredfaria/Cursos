@@ -10,12 +10,11 @@ require('conexao.php');
 // require('queryPadrao.php');
 
 #-Query parametrizada
-// require('queryParametrizada.php');
+require('queryParametrizada.php');
 
 #-Query Bulider
 // require('queryBuilder.php');
 
 
 #ESTRUTURA DO BANCO DE DADOS
-require('schemaManager.php');
-
+// require('schemaManager.php');

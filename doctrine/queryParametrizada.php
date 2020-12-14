@@ -2,21 +2,21 @@
 
 echo '<br><br> Query parametrizada <br>';
 
-$id = $_GET['id'];
 
 if(isset($_GET['id'])){
-    $sql = 'SELECT * FROM userDoctrine where id = :meuID';
+    $id = $_GET['id'];
+    $sql = 'SELECT * FROM jogos_brasileirao where id = :meuID';
     $result = $comn->prepare($sql);
     $result->bindValue('meuID', $id);
 }else{
-    $sql = 'SELECT * FROM userDoctrine';
+    $sql = 'SELECT * FROM jogos_brasileirao';
     $result = $comn->prepare($sql);
 }
 
 $result->execute();
 
 while($row = $result->fetch()){
-    echo $row['nome'] . '<br>';
+    echo $row['Equipe_mandante'] . '<br>';
 }
 
 #OUTRA FORMA DE USAR

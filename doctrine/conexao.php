@@ -5,16 +5,16 @@ use Doctrine\DBAL\DriverManager;
 
 
 $param = [
-    'dbname' => 'teste',
-    'user' => 'dev',
-    'password' => 'dev',
+    'dbname' => 'futebol',
+    'user' => 'root',
+    'password' => '',
     'host' => 'localhost',
     'driver' => 'pdo_mysql'
 ];
 //OU
 $url = [
     // 'url' => 'protocolo(Drive)://usuario:senha@host/dbname'
-    'url' => 'mysql://dev:dev@localhost/teste'
+    'url' => 'mysql://root:@localhost/futebol'
 ];
 
 $config = new Configuration;
