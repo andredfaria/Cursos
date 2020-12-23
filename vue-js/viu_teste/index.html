@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lista de livros</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    
+</head>
+
+<body>
+    <div id="app">
+        {{ info }}
+    </div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+
+  new Vue({
+        el: '#app',
+        data() {
+            return {
+                info: null
+            }
+        },
+        mounted() {
+            axios
+                .get('https://api.github.com/users')
+                .then(response => (this.info = response))
+        }
+    })
+</script>
+
+</html>
