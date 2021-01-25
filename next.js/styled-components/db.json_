@@ -1,12 +1,12 @@
 {
-    "bg": "https://pbs.twimg.com/profile_banners/1246249605962051585/1608152544/1500x500",
-    "title": "Quiz",
-    "description": "Teste os seus conhecimentos pra ver qualé",
+    "bg": "https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1",
+    "title": "Quiz CSS da Alura",
+    "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "questions": [
         {
             "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-            "title": "Qual a resposta para todas as perguntas do universo ?",
-            "description": "Diga la",
+            "title": "Como fazer um seletor por id via CSS?",
+            "description": "Essa é pra aquecer",
             "answer": 2,
             "alternatives": [
                 ".elemento",
@@ -17,8 +17,8 @@
         },
         {
             "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-            "title": "Qual a pergunta mais facil de fazer?",
-            "description": "Sera que você sabe ? ",
+            "title": "Como fazer um background gradiente com css?",
+            "description": "Faz tempo em haha",
             "answer": 0,
             "alternatives": [
                 "background: linear-gradient(#e66465, #9198e5);",

@@ -9,9 +9,12 @@ const app = new Vue({
             phone:''
         },
         edit: false,
-        msg: 'Hello World!',
         name: 'Contatos App'
-
+    },
+    computed: {
+        contactsCount() {
+            return `Total de contatos é ${this.contacts.length}`
+        }
     },
     methods: {
         saveContact(c) {
