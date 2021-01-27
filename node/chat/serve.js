@@ -12,13 +12,17 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-serverSocket.on('connection', function (socket) {
-    console.log('Cliente conectado: ' + socket.id);
+serverSocket.on('connection', (socket) => {
 
-    socket.on('chat', function (msg) {
-        console.log(`a mensagem é ${msg}`);
+    socket.on('client', (client) => {
+        serverSocket.emit('client', socket.id);
+    });
 
-        serverSocket.emit('chat', msg);
+
+    socket.on('chat', function (msg, e) {
+        console.log(e);
+        // console.log(`a mensagem é ${msg}`);
+        serverSocket.emit('chat', msg, e);
     });
 
 });
