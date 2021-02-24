@@ -1,6 +1,11 @@
+import { Experiencebar } from './components/ExperienceBar'
+import './components/styles/global.css'
+
 function App() {
   return (
-   <h1>Agora vaiii</h1>
+    <div className='container'>
+      <Experiencebar></Experiencebar>
+    </div>
   );
 }
 
