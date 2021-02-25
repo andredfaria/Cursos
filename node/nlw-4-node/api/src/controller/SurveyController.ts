@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { getCustomRepository } from 'typeorm';
 import { SurveyRepository } from '../repositories/SurveyRepository';
 
-class SurveysController {
+class SurveyController {
     async create (req: Request, res: Response) {
       const {title, description} = req.body;
 
@@ -17,6 +17,17 @@ class SurveysController {
 
       return res.status(201).json(survey);
     }
+
+    async show (req: Request, res: Response) {
+      const surveyRepository = getCustomRepository(SurveyRepository);
+
+      const all = await surveyRepository.find();
+      
+      if(all) 
+        return res.status(200).json(all);
+      
+      return res.status(500).json({ message: 'Erro' })
+    }
 }
 
-export { SurveysController };
+export { SurveyController };
