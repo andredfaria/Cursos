@@ -1,8 +1,6 @@
 import { Request, Response } from 'express';
 import { getCustomRepository } from 'typeorm';
-import { stringify } from 'uuid';
 import { SurveyUserRepository } from '../repositories/SurveyUserRepository';
-import { UsersRepository } from '../repositories/UserRepository';
 
 class AnswerController {
     async execute (req: Request, res: Response) {

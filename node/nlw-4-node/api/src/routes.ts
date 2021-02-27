@@ -3,6 +3,7 @@ import { SurveyController } from './controller/SurveyController';
 import { UserController } from './controller/UserController';
 import { SendMailController } from './controller/SendMailController';
 import { AnswerController } from './controller/AnswerController';
+import { NpsController } from './controller/NpsController';
 
 const router = Router();
 
@@ -10,6 +11,7 @@ const userController = new UserController();
 const surveyController = new SurveyController();
 const sendMailController = new SendMailController();
 const answerController = new AnswerController();
+const npsController = new NpsController();
 
 //user
 router.post('/users', userController.create);
@@ -22,7 +24,8 @@ router.get('/survey', surveyController.show);
 router.post('/sendEmail', sendMailController.execute)
 
 // answer
-router.get('/answer/:value', answerController.execute)
+router.get('/answers/:value', answerController.execute)
+router.get('/nps/:survey_id', npsController.execute)
 
 
 export { router }
