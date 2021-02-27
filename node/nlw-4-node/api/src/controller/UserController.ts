@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { getCustomRepository } from 'typeorm';
 import { UsersRepository } from '../repositories/UserRepository';
 import * as yup from 'yup';
+import { AppError } from '../errors/AppErros';
 
 class UserController {
     async create (req: Request, res: Response) {
@@ -18,8 +19,7 @@ class UserController {
       }
 
       if (!(await schema.isValid(req.body))) 
-        return res.status(400).json({error: "Validade faill"})
-      
+        throw new AppError("Validade faill");
       
       const usersRepository = getCustomRepository(UsersRepository);
 
@@ -31,11 +31,9 @@ class UserController {
           name, email
       });
 
-      if(userAlreadyExists){
-          return res.status(400).json({
-              mesage: 'User already exists !'
-          })
-      }
+      if(userAlreadyExists)
+        throw new AppError("User already exists");
+      
 
       await usersRepository.save(user);
 

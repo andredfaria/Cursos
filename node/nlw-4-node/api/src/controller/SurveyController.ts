@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { getCustomRepository } from 'typeorm';
+import { AppError } from '../errors/AppErros';
 import { SurveyRepository } from '../repositories/SurveyRepository';
 
 class SurveyController {
@@ -26,7 +27,7 @@ class SurveyController {
       if(all) 
         return res.status(200).json(all);
       
-      return res.status(500).json({ message: 'Erro' })
+      throw new AppError("Error");
     }
 }
 
