@@ -1,22 +1,22 @@
+import StatusBarPage from "../../components/statusBarPages";
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { Text, View } from 'react-native';
+import { LinearGradient } from "expo-linear-gradient";
+import Menu from "../../components/Menu";
 export default function Home() {
     return (
-        <View style={styles.container}>
+        <LinearGradient
+            colors={['#1ddbb9', '#132742']}
+            style={{ flex: 1, justifyContent: 'center' }}>
+            
+            <StatusBarPage
+                barStyle="light-content"
+                backgroundColor="#1ddbb9"
+            />
+
+            <Menu/>
+
             <Text>Pagina Home</Text>
-            <StatusBar style="auto" />
-        </View>
+        </LinearGradient>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        fontWeight: 500,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
