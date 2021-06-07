@@ -1,6 +1,6 @@
 import StatusBarPage from "../../components/statusBarPages";
 import React from 'react';
-import { TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Platform, Text } from 'react-native';
+import { TouchableWithoutFeedback, Keyboard, KeyboardAvoidingView, Platform, Text, Modal } from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 import Menu from "../../components/Menu";
 
@@ -13,14 +13,17 @@ import {
     SubTitle, Title, ContentInput, Input,
     BoxIcon, ButtonLink
 } from './styles';
+import ModalLink from "../../components/ModalLink";
 
 
 export default function Home() {
 
     const [input, setInput] = useState('')
+    const [modalVisible, setModalVisible] = useState(false)
 
     function shortLink(param) {
-        alert('URL digirada ' + input)
+        // alert('URL digirada ' + input)
+        // setModalVisible(true);
     }
 
     return (
@@ -71,6 +74,10 @@ export default function Home() {
 
                     </ContainerContent>
                 </KeyboardAvoidingView>
+
+                <Modal visible={modalVisible} transparent animationType="slide">
+                    <ModalLink/>
+                </Modal>
 
             </LinearGradient>
         </TouchableWithoutFeedback>
