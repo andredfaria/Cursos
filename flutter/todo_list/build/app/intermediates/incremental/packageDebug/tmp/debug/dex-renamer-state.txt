@@ -1,0 +1,4 @@
+#Sun Jun 13 03:02:11 BRT 2021
+base.0=/var/www/html/andre/cursos/flutter/todo_list/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
