@@ -1,13 +1,7 @@
+import "reflect-metadata";
 import express from 'express';
+import "./database";
 
 const app = express();
 
-app.listen(3000, () => console.log('server is running !'));
-
-app.get('/', (req, res) => {
-    return res.send('primeira rota get')
-});
-
-app.post('/', (req, res) => {
-    return res.send('primeira rota post')
-})
+app.listen(3000, () => console.log('server is running port 3000 !'));
