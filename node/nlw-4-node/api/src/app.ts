@@ -1,28 +1,29 @@
-import express, { NextFunction, Request, Response } from 'express';
-import 'express-async-erros';
-import 'reflect-metadata';
-import createConnection from './database';
-import { AppError } from './errors/AppErros';
-import "./routes";
-import { router } from './routes';
+import "reflect-metadata";
+import express, { NextFunction, Request, Response } from "express";
+import "express-async-errors";
+import createConnection from "./database";
+import { router } from "./routes";
+import { AppError } from "./errors/AppError";
 
-createConnection()
-
+createConnection();
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
 app.use(router);
 
-app.use((error: Error, req: Request, res: Response, _next: NextFunction) => {
-  if (error instanceof AppError)
-    return res.status(Number(error.statusCode)).json({
-      massage: error.massage
-    })
+app.use(
+  (err: Error, request: Request, response: Response, _next: NextFunction) => {
+    if (err instanceof AppError) {
+      return response.status(err.statusCode).json({
+        message: err.message,
+      });
+    }
 
-  return res.status(500).json({
-    status: "error",
-    massage: `internal server error ${error.message}`,
-  })
-})
+    return response.status(500).json({
+      status: "Error",
+      message: `Internal server error ${err.message}`,
+    });
+  }
+);
 
 export { app };
