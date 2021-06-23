@@ -8,6 +8,18 @@
 
 # 🔨 Tecnologias
 
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- [NodeJS](https://nodejs.org/en/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Express](https://expressjs.com/pt-br/)
+- [TypeORM](https://typeorm.io/#/)
+- [VSCode](https://code.visualstudio.com/)
+- [Socket.io](https://socket.io/)
+- [NPM](https://www.npmjs.com/)
+- [Yarn](https://yarnpkg.com/)
+- [SQLite](https://www.sqlite.org/index.html)
+- [SQL Editor Beekeeper Studio](https://www.beekeeperstudio.io/)
 
 # 🚀 Como executar
 
@@ -17,12 +29,6 @@
 - Execute `yarn typeorm migration:run` para criar as migrations
 
 A aplicação pode ser acessada em [`localhost:3333`](http://localhost:3333).
-
-<br>
-
-# 🕸 Diagrama
-
-<img src="public/diagrama.png" alt="Diagrama da aplicação" />
 
 <br>
 <br>
@@ -36,23 +42,23 @@ A aplicação pode ser acessada em [`localhost:3333`](http://localhost:3333).
 - <h2>'/users'</h2>
 ```
 {
-	"name": "Andre",
 	"email": "andre@gmail.com"
 }
 ```
 
-- <h2>'/surveys'</h2>
+- <h2>'/settings'</h2>
 ```
 {
-	"title": "NPS",
-	"description": "Seu nps"
+	"chat": "1",
+	"username": "Andre"
 }
 ```
-- <h2>'/sendMail'</h2>
+- <h2>'/messages'</h2>
 ```
 {
-	"email": "andre@gmail.com",
-	"survey_id": "042727f8-833e-4481-a3eb-828939a531f2"
+	"admin_id?": "042727f8-833e-4481-a3eb-828939a531f2",
+	"text": "Olá",
+    "user_id": "042727f8-833e-4481-a3eb-828939a531f2"
 }
 ```
 
