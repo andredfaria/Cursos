@@ -69,11 +69,7 @@ A aplicação pode ser acessada em [`localhost:4321`](http://localhost:4321).
 
 ## routes GET
 
-- <h2>'/surveys'</h2>
-
-- <h2>'/answers/:value'</h2>
-
-- <h2>'/nps/:survey_id'</h2>
+- <h2>'/messages/:id'</h2>
 
 
 ## 📄 Licença

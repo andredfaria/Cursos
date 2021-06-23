@@ -9,11 +9,11 @@ const settingsController = new SettingsController();
 const usersController = new UsersController();
 const messagesController = new MessagesController();
 
-// routes settings
-routes.post("/settings", settingsController.create);
-
 // routes users
 routes.post("/users", usersController.create);
+
+// routes settings
+routes.post("/settings", settingsController.create);
 
 // routes messages
 routes.post("/messages", messagesController.create);
