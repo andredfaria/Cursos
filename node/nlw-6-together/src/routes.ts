@@ -1,21 +1,38 @@
 import { Router } from 'express'
 import { AuthenticateUserController } from './controllers/AuthenticateUserController'
-import { CreateComplimentCOntroller } from './controllers/CreateComplimentController'
+import { CreateComplimentController } from './controllers/CreateComplimentController'
 import { CreateTagController } from './controllers/CreateTagController'
 import { CreateUserController } from './controllers/CreateUserController'
+import { ListReceivedComplimentsByUserIdController } from './controllers/ListReceivedComplimentsByUserIdController'
+import { ListSentComplimentsByUserIdController } from './controllers/ListSentComplimentsByUserIdController'
+import { ListTagsController } from './controllers/ListTagsController'
+import { ListUsersController } from './controllers/ListUsersController'
 import { ensureAdmin } from './middlewares/ensureAdmin'
-import { ensureAuthenticated } from './middlewares/ensureAuthenticated';
+import { ensureAuthenticated } from './middlewares/ensureAuthenticated'
 
 const createUserController = new CreateUserController()
 const createTagController = new CreateTagController()
 const authenticateUserController = new AuthenticateUserController()
-const createComplimentController = new CreateComplimentCOntroller()
+const createComplimentController = new CreateComplimentController()
+const listSentComplimentsByUserIdController = new ListSentComplimentsByUserIdController()
+const listReceivedComplimentsByUserIdController = new ListReceivedComplimentsByUserIdController()
+const listTagsController = new ListTagsController()
+const listUsersController = new ListUsersController()
 
 const router = Router()
 
-router.post('/tags', ensureAuthenticated, ensureAdmin, createTagController.handle)
+// Routes User
 router.post('/users', createUserController.handle)
+router.get('/users', ensureAuthenticated, listUsersController.handle)
 router.post('/login', authenticateUserController.handle)
+
+// Routes Tags
+router.post('/tags', ensureAuthenticated, ensureAdmin, createTagController.handle)
+router.get('/tags', ensureAuthenticated, listTagsController.handle)
+
+// Routes compliments
 router.post('/compliments', ensureAuthenticated, createComplimentController.handle)
+router.get('/users/compliments/sent', ensureAuthenticated, listSentComplimentsByUserIdController.handle)
+router.get('/users/compliments/received', ensureAuthenticated, listReceivedComplimentsByUserIdController.handle)
 
 export { router }
