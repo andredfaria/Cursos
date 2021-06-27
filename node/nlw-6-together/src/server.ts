@@ -1,13 +1,31 @@
-import express from 'express';
+import 'reflect-metadata'
+import express, { NextFunction, Request, Response } from 'express'
+import cors from 'cors'
+import 'express-async-errors'
 
-const app = express();
+import './database'
+import { router } from './routes'
 
-app.listen(3000, () => console.log('server is running !'));
+const app = express()
 
-app.get('/', (req, res) => {
-    return res.send('primeira rota get')
-});
+app.use(cors())
 
-app.post('/', (req, res) => {
-    return res.send('primeira rota post')
+app.use(express.json())
+
+app.use(router)
+
+app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
+  if (err instanceof Error) {
+    return response.status(400).json({
+      status: 'error',
+      message: err.message
+    })
+  }
+
+  return response.status(500).json({
+    status: 'error',
+    message: 'Internal Server Error'
+  })
 })
+
+app.listen(3333, () => console.log('🤖️ Server is running on port 3333 🤖️'))
