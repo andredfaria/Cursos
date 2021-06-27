@@ -29,7 +29,7 @@ export class AuthenticateUserService {
 
     const token = sign({
       email: user.email
-    }, '4ca6386f96f125df9bd6732fdc6d239e', {
+    }, '123', {
       subject: user.id,
       expiresIn: '1d'
     })
