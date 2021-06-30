@@ -10,12 +10,12 @@ class FormContainer extends StatelessWidget {
         child: Column(
           children: <Widget>[
             InputField(
-              hint: 'Username',
+              hint: 'USUÁRIO',
               obscure: false,
               icon: Icons.person_outline_rounded,
             ),
             InputField(
-              hint: 'Password',
+              hint: 'SENHA',
               obscure: true,
               icon: Icons.lock_outline_rounded
             ),

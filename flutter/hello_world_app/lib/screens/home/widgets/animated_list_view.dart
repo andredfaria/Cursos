@@ -24,14 +24,14 @@ class AnimatedListView extends StatelessWidget {
         ),
         ListData(
           title: 'Meu Instagram',
-          subtitle: 'I study a lot of Flutter',
-          image: AssetImage('assets/images/flutter.png'),
+          subtitle: 'Onde compartilho um pouco sobre mim',
+          image: AssetImage('assets/images/instagram.png'),
           margin: listSlidePosition.value * 2,
         ),
         ListData(
-          title: 'Dart Study',
-          subtitle: 'also study dart',
-          image: AssetImage('assets/images/dart.png'),
+          title: 'Meu WhatsApp',
+          subtitle: 'Onde converso com meu amigos',
+          image: AssetImage('assets/images/whatsapp.png'),
           margin: listSlidePosition.value * 1,
         ),
         ListData(

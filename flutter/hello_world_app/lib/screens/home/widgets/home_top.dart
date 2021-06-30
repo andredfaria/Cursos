@@ -50,7 +50,7 @@ class HomeTop extends StatelessWidget {
               ),
             ),
             Text(
-              'Welcome, André!',
+              'André',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
