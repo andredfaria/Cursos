@@ -1,0 +1,6 @@
+#USE NODE 16 & NPM 8
+
+➜  zap-gpt git:(master) ✗ node -v
+v16.19.0
+➜  zap-gpt git:(master) ✗ npm -v
+8.19.3
