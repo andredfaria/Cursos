@@ -19,8 +19,8 @@ client.on('ready', () => {
 client.on('message_create', msg => {
     const command = msg.body.split(' ')[0];
     // Cola seu número onde tem o 84848484, sem o 9
-    const sender = msg.from.includes("84848484") ? msg.to : msg.from
-    if (command === "/sticker")  generateSticker(msg, sender)
+    const sender = msg.to
+    if (command === "/sticker") generateSticker(msg, sender)
 });
 
 client.initialize();
