@@ -8,8 +8,10 @@ const options = {
 }
 
 const server = new GraphQLServer({
-  typeDefs: path.resolve(__dirname, 'schema.graphql'),
-  resolvers
+  typeDefs: path.resolve(__dirname, "schema.graphql"),
+  resolvers,
+  introspection: true,
+  playground: true,
 });
 
 server.start(options, () => console.log("Servidor rodando na porta 4000"));
